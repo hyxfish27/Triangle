@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div class="pageContainer">
+      <header>
+        <h4>Triangle Generator</h4>
+      </header>
+      <main>
+        <div class="block-size text-center">
+          <h5>choose size</h5>
+          <label for="height">高度</label><br>
+          <input type="number" id="height"><br>
+          <label for="width">方塊尺寸(px)</label><br>
+          <input type="number" id="size"><br>
+          <label for="width">間距(px)</label><br>
+          <input type="number" id="margin"><br>
+        </div>
+        <div class="text-center">
+          <h5>choose symbol</h5>
+          <div class="symbol-btns">
+            <button id="star">*</button>
+            <button id="circle">o</button>
+            <button id="cross">x</button>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div class="display">
+          <div class="board"></div>
+        </div>
+        <button onclick="clear()">清空</button>
+      </footer>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
