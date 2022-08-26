@@ -6,7 +6,7 @@ const originMatrix = new Matrix()
  * @author hyxfish27
  * @public
  */
-export const rotate = {
+export const Rotate = {
   rotate90: (array) => {
     const column = array.length
     const row = array[0].length
@@ -20,9 +20,9 @@ export const rotate = {
     return arr90
   },
   rotate180: (array) => {
-    return rotate.rotate90(rotate.rotate90(array))
+    return Rotate.rotate90(Rotate.rotate90(array))
   },
   rotate270: (array) => {
-    return rotate.rotate90(rotate.rotate90(rotate.rotate90(array)))
+    return Rotate.rotate90(Rotate.rotate90(Rotate.rotate90(array)))
   }
 }

@@ -2,7 +2,7 @@
 import { Matrix } from '../../component/Matrix'
 
 // Block display
-// const board = document.querySelector('.board')
+const board = document.querySelector('.board')
 
 const matrix = new Matrix()
 
@@ -36,7 +36,8 @@ const TriangleStrategies = {
         }
       }
     }
-    matrix.render(initialMatrix, input)
+    return initialMatrix
+    // matrix.render(initialMatrix, input)
   },
   /**
    * @param {object} input 

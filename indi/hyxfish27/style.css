@@ -34,6 +34,7 @@
 .display {
   min-height: 75vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -50,6 +51,7 @@
 
 .block-none {
   display: inline-block;
+  visibility: hidden;
   width: 16px;
   height: 16px;
   margin: 8px;
