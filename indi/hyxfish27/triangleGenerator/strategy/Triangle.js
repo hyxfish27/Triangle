@@ -1,33 +1,33 @@
-import styleToggler from '../../styleToggler'
+// import styleToggler from '../../styleToggler'
+import { Matrix } from '../../component/Matrix'
 
 // Block display
 const board = document.querySelector('.board')
+
+const matrix = new Matrix()
 
 const TriangleStrategies = {
   // 1,2,3,4,5 等腰三角形
   'isosceles-triangle': function (input) {
     board.innerHTML = ''
-    const base = 2 * input.height - 1
-    const mid = (base - 1) / 2
+
+    const row = input.height
+    const column = 2 * input.height - 1
+
+    const initialMatrix = matrix.initial(row, column)
+    const mid = (column - 1) / 2
 
     for (let i = 0; i < input.height; i++) {
-      const horizontalDiv = document.createElement('div')
-      for (let j = 0; j < base; j++) {
-        const blockDiv = document.createElement('div')
+      for (let j = 0; j < column; j++) {
         const initial = mid - i
         if ((j - initial) % 2 === 0 && j >= mid - i && j <= mid + i) {
-          styleToggler(blockDiv)('block')(`${input.size}px`)(
-          `${input.margin}px`
-          )(input.symbol)
+          initialMatrix[i][j] = 1
         } else {
-          styleToggler(blockDiv)('block-none')(`${input.size}px`)(
-          `${input.margin}px`
-          )(input.symbol)
+          initialMatrix[i][j] = 0
         }
-        horizontalDiv.appendChild(blockDiv)
       }
-      board.appendChild(horizontalDiv)
     }
+    matrix.render(initialMatrix, input)
   },
   // 1,3,5,7,9
   'type-2': function (input) {
@@ -38,9 +38,9 @@ const TriangleStrategies = {
       for (let j = 0; j < base; j++) {
         const block = document.createElement('div')
         if (j < mid - i || j > mid + i) {
-          styleToggler(block)('block-none')(`${input.size}px`)(`${input.margin}px`)(input.symbol)
+          // styleToggler(block)('block-none')(`${input.size}px`)(`${input.margin}px`)(input.symbol)
         } else {
-          styleToggler(block)('block')(`${input.size}px`)(`${input.margin}px`)(input.symbol)
+          // styleToggler(block)('block')(`${input.size}px`)(`${input.margin}px`)(input.symbol)
         }
         horizontal.appendChild(block)
       }
