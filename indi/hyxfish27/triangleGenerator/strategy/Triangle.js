@@ -2,12 +2,21 @@
 import { Matrix } from '../../component/Matrix'
 
 // Block display
-const board = document.querySelector('.board')
+// const board = document.querySelector('.board')
 
 const matrix = new Matrix()
 
+/**
+ * @author hyxfish27
+ * @public
+ * @desc 使用策略模式列舉 TriangleStrategies
+ */
 const TriangleStrategies = {
-  // 1,2,3,4,5 等腰三角形
+  /**
+   * @param {object} input 
+   * @param {int} input.height 三角形高度
+   * @desc 處理等腰三角形演算法-1,2,3,4,5
+   */
   'isosceles-triangle': function (input) {
     board.innerHTML = ''
 
@@ -29,7 +38,11 @@ const TriangleStrategies = {
     }
     matrix.render(initialMatrix, input)
   },
-  // 1,3,5,7,9
+  /**
+   * @param {object} input 
+   * @param {int} input.height 三角形高度
+   * @desc 處理等腰三角形演算法-1,3,5,7,9
+   */
   'type-2': function (input) {
     const base = 2 * input.height - 1
     const mid = (base - 1) / 2

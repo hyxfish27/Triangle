@@ -2,6 +2,10 @@ import { Matrix } from '../../component/Matrix'
 
 const originMatrix = new Matrix()
 
+/**
+ * @author hyxfish27
+ * @public
+ */
 export const rotate = {
   rotate90: (array) => {
     const column = array.length
